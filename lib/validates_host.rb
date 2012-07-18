@@ -2,10 +2,10 @@ require "validates_host/version"
 require "active_model"
 
 module ValidatesHost
-  autoload :HostValidator, 'validates_host/host_validator'
-  autoload :DomainValidator, 'validates_host/domain_validator'
+  autoload :HostNameValidator, 'validates_host/host_name_validator'
+  autoload :DomainNameValidator, 'validates_host/domain_name_validator'
   autoload :IpValidator, 'validates_host/ip_validator'
-  autoload :Host, 'validates_host/host'
-  autoload :Domain, 'validates_host/domain'
-  autoload :Ip, 'validates_host/ip'
+
+  autoload :ShouldaMatchers, "validates_host/shoulda-matchers" if defined?(::Shoulda)
+  autoload :Remarkable, "validates_host/remarkable" if defined?(::Remarkable)
 end

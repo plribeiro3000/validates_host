@@ -1,7 +1,9 @@
 class CreateServers < ActiveRecord::Migration
   def self.up
-    create_table :servers do |u|
-      u.string :domain
+    create_table :servers do |s|
+      s.string :domain_name
+      s.string :host_name
+      s.string :ip
     end
   end
 
