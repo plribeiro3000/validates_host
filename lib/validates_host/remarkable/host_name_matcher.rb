@@ -6,7 +6,7 @@ module Remarkable
       class HostNameMatcher < Remarkable::ActiveModel::Base
         arguments :host_name
 
-        collection_assertions :accept_valid_value?, :reject_valid_value?, :allow_nil?
+        collection_assertions :accept_valid_value?, :reject_valid_value?
 
         protected
 
@@ -18,11 +18,6 @@ module Remarkable
         def reject_valid_value?
           @subject.domain_name = '01'
           @subject.valid?.errors[:host_name].should == ['is invalid']
-        end
-
-        def allow_nil?
-          @subject.domain_name = nil
-          @subject.valid?.errors[:host_name].should == []
         end
       end
 

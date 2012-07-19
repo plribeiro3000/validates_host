@@ -6,7 +6,7 @@ module Remarkable
       class IpMatcher < Remarkable::ActiveModel::Base
         arguments :ip
 
-        collection_assertions :accept_valid_value?, :reject_valid_value?, :allow_nil?
+        collection_assertions :accept_valid_value?, :reject_valid_value?
 
         protected
 
@@ -18,11 +18,6 @@ module Remarkable
         def reject_valid_value?
           @subject.domain_name = '01'
           @subject.valid?.errors[:ip].should == ['is invalid']
-        end
-
-        def allow_nil?
-          @subject.domain_name = nil
-          @subject.valid?.errors[:ip].should == []
         end
       end
 

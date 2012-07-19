@@ -19,7 +19,7 @@ module Shoulda
         def matches?(subject)
           super(subject)
 
-          disallows_invalid_value and allows_valid_value and allows_nil_value
+          disallows_invalid_value and allows_valid_value
         end
 
         private
@@ -30,10 +30,6 @@ module Shoulda
 
         def allows_valid_value
           allows_value_of("bd01")
-        end
-
-        def allows_nil_value
-          allows_value_of(nil)
         end
       end
     end
