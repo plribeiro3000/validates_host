@@ -20,11 +20,17 @@ Or install it yourself as:
 
 Lets say you have a model that you want to have valid host fields. Just add this to your model:
 
- class Server < ActiveRecord::Base
-    validates :domain_name, :domain_name => true
-    validates :host_name, :host_name => true
-    validates :ip, :ip => true
- end
+```ruby
+    class Server < ActiveRecord::Base
+       validates :domain_name, :domain_name => true
+       validates :host_name, :host_name => true
+       validates :ip, :ip => true
+    end
+```
+
+## Test
+
+This gem has builtin matchers for shoulda-matchers and remarkable.
 
 ## Contributing
 
