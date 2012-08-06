@@ -21,11 +21,11 @@ Or install it yourself as:
 Lets say you have a model that you want to have valid host fields. Just add this to your model:
 
 ```ruby
-    class Server < ActiveRecord::Base
-       validates :domain_name, :domain_name => true
-       validates :host_name, :host_name => true
-       validates :ip, :ip => true
-    end
+class Server < ActiveRecord::Base
+    validates :domain_name, :domain_name => true
+    validates :host_name, :host_name => true
+    validates :ip, :ip => true
+end
 ```
 
 ## Test
