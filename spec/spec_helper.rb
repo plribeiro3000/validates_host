@@ -8,3 +8,4 @@ Dir.glob(File.dirname(__FILE__) + "/fake_app/**/*.rb").each { |file| require fil
 ActiveRecord::Base.establish_connection(:adapter => "sqlite3", :database => ":memory:")
 
 CreateServers.migrate(:up)
+CreateSubnets.migrate(:up)

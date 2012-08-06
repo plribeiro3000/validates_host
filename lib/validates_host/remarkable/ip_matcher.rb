@@ -21,8 +21,8 @@ module Remarkable
         end
       end
 
-      def require_a_valid_domain_name(*args, &block)
-        HostNameMatcher.new(*args, &block).spec(self)
+      def require_a_valid_ip(*args, &block)
+        IpMatcher.new(*args, &block).spec(self)
       end
     end
   end

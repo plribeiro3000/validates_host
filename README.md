@@ -26,6 +26,10 @@ class Server < ActiveRecord::Base
     validates :host_name, :host_name => true
     validates :ip, :ip => true
 end
+
+class Subnet < ActiveRecord::Base
+    validates :value, :subnet => true
+end
 ```
 
 ## Test
