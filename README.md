@@ -1,6 +1,6 @@
-# ValidatesHost
+# ValidatesHost [![Build Status](https://secure.travis-ci.org/plribeiro3000/validates_host.png?branch=master)](http://travis-ci.org/plribeiro3000/validates_host)
 
-TODO: Write a gem description
+Rails gem to validate Host Related fields.
 
 ## Installation
 
@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Lets say you have a model that you want to have valid host fields. Just add this to your model:
+
+ class Server < ActiveRecord::Base
+    validates :domain_name, :domain_name => true
+    validates :host_name, :host_name => true
+    validates :ip, :ip => true
+ end
 
 ## Contributing
 
