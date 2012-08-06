@@ -4,6 +4,8 @@ describe IpValidator do
   context "when ip is invalid" do
     before :each do
       @server = Server.new(:ip => "127.0.0")
+      I18n.stub(:t).with(:"activerecord.errors.models.server.attributes.ip.invalid",
+                         :default => :"activerecord.errors.messages.invalid").and_return("is invalid")
     end
 
     it "should set object as invalid" do

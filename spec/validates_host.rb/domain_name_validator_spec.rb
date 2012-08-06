@@ -4,6 +4,8 @@ describe DomainNameValidator do
   context "when domain_name is invalid" do
     before :each do
       @server = Server.new(:domain_name => "http://")
+      I18n.stub(:t).with(:"activerecord.errors.models.server.attributes.domain_name.invalid",
+                         :default => :"activerecord.errors.messages.invalid").and_return("is invalid")
     end
 
     it "should set object as invalid" do
