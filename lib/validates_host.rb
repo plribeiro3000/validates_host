@@ -9,4 +9,3 @@ require 'validates_host/subnet_validator'
 
 #Rspec Matchers
 require "validates_host/shoulda-matchers" if defined?(::Shoulda)
-require "validates_host/remarkable" if defined?(::Remarkable)
