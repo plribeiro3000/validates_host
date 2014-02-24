@@ -8,9 +8,5 @@ module ValidatesHost
       return true if @host_name.blank?
       @host_name =~ /^[a-z][a-z0-9-]+$/
     end
-
-    def host_name
-      @host_name
-    end
   end
 end
