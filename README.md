@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/validates_host.png)](http://badge.fury.io/rb/validates_host) [![Build Status](https://secure.travis-ci.org/plribeiro3000/validates_host.png?branch=master)](http://travis-ci.org/plribeiro3000/validates_host) [![Dependency Status](https://gemnasium.com/plribeiro3000/validates_host.png)](https://gemnasium.com/plribeiro3000/validates_host) [![Coverage Status](https://coveralls.io/repos/plribeiro3000/validates_host/badge.png?branch=master)](https://coveralls.io/r/plribeiro3000/validates_host)  [![Code Climate](https://codeclimate.com/github/plribeiro3000/validates_host.png)](https://codeclimate.com/github/plribeiro3000/validates_host)
 
-Rails gem to validate Host Related fields.
+Validates host attributes and test it in a simple way
 
 ## Installation
 
@@ -20,23 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-Lets say you have a model that you want to have valid host fields. Just add this to your model:
+Just use like any other validator:
 
 ```ruby
 class Server < ActiveRecord::Base
-    validates :domain_name, :domain_name => true
-    validates :host_name, :host_name => true
-    validates :ip, :ip => true
+    validates :domain_name, domain_name: true
+    validates :host_name, host_name: true
+    validates :ip, ip: true
 end
 
 class Subnet < ActiveRecord::Base
-    validates :value, :subnet => true
+    validates :value, subnet: true
 end
 ```
 
-## Test
+## Notes
 
-This gem has builtin matchers for shoulda-matchers and remarkable.
+It will load a macher to test automatically if the gem is below shoulda-matchers.
+
+## Mantainers
+[@plribeiro3000](https://github.com/plribeiro3000)
 
 ## Contributing
 
