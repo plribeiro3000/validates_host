@@ -4,10 +4,10 @@ module Shoulda
   module Matchers
     module ActiveModel
       def require_a_valid_ip(attribute = :ip)
-        IpMatcher.new(attribute)
+        RequireAValidIpMatcher.new(attribute)
       end
 
-      class IpMatcher < ValidationMatcher
+      class RequireAValidIpMatcher < ValidationMatcher
         def initialize(attribute)
           @attribute = attribute
         end

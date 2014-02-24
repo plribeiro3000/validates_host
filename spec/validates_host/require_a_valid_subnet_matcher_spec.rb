@@ -1,7 +1,6 @@
 require 'spec_helper'
-require 'shoulda-matchers'
 
-describe Shoulda::Matchers::ActiveModel::SubnetMatcher do
+describe Shoulda::Matchers::ActiveModel::RequireAValidSubnetMatcher do
   before :each do
     @subnet = Subnet.new
   end

@@ -3,17 +3,17 @@ require "shoulda-matchers"
 module Shoulda
   module Matchers
     module ActiveModel
-      def require_a_valid_subnet(attribute = :value)
-        SubnetMatcher.new(attribute)
+      def require_a_valid_domain_name(attribute = :domain_name)
+        RequireAValidDomainNameMatcher.new(attribute)
       end
 
-      class SubnetMatcher < ValidationMatcher
+      class RequireAValidDomainNameMatcher < ValidationMatcher
         def initialize(attribute)
           @attribute = attribute
         end
 
         def description
-          "require #{@attribute} to be a valid subnet"
+          "require #{@attribute} to be a valid domain name"
         end
 
         def matches?(subject)
@@ -25,11 +25,11 @@ module Shoulda
         private
 
         def disallows_invalid_value
-          disallows_value_of("10.0.0")
+          disallows_value_of("example")
         end
 
         def allows_valid_value
-          allows_value_of("10.10.10.1/28")
+          allows_value_of("example.com")
         end
       end
     end

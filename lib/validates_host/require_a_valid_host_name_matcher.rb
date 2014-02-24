@@ -4,10 +4,10 @@ module Shoulda
   module Matchers
     module ActiveModel
       def require_a_valid_host_name(attribute = :host_name)
-        HostNameMatcher.new(attribute)
+        RequireAValidHostNameMatcher.new(attribute)
       end
 
-      class HostNameMatcher < ValidationMatcher
+      class RequireAValidHostNameMatcher < ValidationMatcher
         def initialize(attribute)
           @attribute = attribute
         end

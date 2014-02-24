@@ -1,7 +1,6 @@
 require 'spec_helper'
-require 'shoulda-matchers'
 
-describe Shoulda::Matchers::ActiveModel::HostNameMatcher do
+describe Shoulda::Matchers::ActiveModel::RequireAValidHostNameMatcher do
   before :each do
     @server = Server.new
   end
