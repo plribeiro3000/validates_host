@@ -7,7 +7,7 @@ describe SubnetValidator do
     end
 
     it 'should set object as invalid' do
-      @subnet.valid?.should be_false
+      @subnet.valid?.should be false
     end
 
     it 'should set an error' do
@@ -22,7 +22,7 @@ describe SubnetValidator do
     end
 
     it 'should set object as valid' do
-      @subnet.valid?.should be_true
+      @subnet.valid?.should be true
     end
 
     it 'should not set an error on attribute' do
@@ -33,6 +33,6 @@ describe SubnetValidator do
 
   it 'should be valid with a nil value' do
     @subnet = Subnet.new(:value => nil)
-    @subnet.valid?.should be_true
+    @subnet.valid?.should be true
   end
 end

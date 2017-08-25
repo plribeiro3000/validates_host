@@ -7,7 +7,7 @@ describe HostNameValidator do
     end
 
     it 'should set object as invalid' do
-      @server.valid?.should be_false
+      @server.valid?.should be false
     end
 
     it 'should set an error' do
@@ -22,7 +22,7 @@ describe HostNameValidator do
     end
 
     it 'should set object as valid' do
-      @server.valid?.should be_true
+      @server.valid?.should be true
     end
 
     it 'should not set an error on attribute' do
@@ -33,6 +33,6 @@ describe HostNameValidator do
 
   it 'should be valid with a nil value' do
     @server = Server.new(:host_name => nil)
-    @server.valid?.should be_true
+    @server.valid?.should be true
   end
 end
