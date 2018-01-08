@@ -8,10 +8,6 @@ module Shoulda
       end
 
       class RequireAValidSubnetMatcher < ValidationMatcher
-        def initialize(attribute)
-          @attribute = attribute
-        end
-
         def description
           "require #{@attribute} to be a valid subnet"
         end

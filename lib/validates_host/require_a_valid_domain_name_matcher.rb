@@ -8,10 +8,6 @@ module Shoulda
       end
 
       class RequireAValidDomainNameMatcher < ValidationMatcher
-        def initialize(attribute)
-          @attribute = attribute
-        end
-
         def description
           "require #{@attribute} to be a valid domain name"
         end

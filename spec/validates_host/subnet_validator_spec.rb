@@ -7,12 +7,12 @@ describe SubnetValidator do
     end
 
     it 'should set object as invalid' do
-      @subnet.valid?.should be_false
+      expect(@subnet.valid?).to be_falsey
     end
 
     it 'should set an error' do
       @subnet.valid?
-      @subnet.errors[:value].should == ['is invalid']
+      expect(@subnet.errors[:value]).to eq(['is invalid'])
     end
   end
 
@@ -22,17 +22,17 @@ describe SubnetValidator do
     end
 
     it 'should set object as valid' do
-      @subnet.valid?.should be_true
+      expect(@subnet.valid?).to be_truthy
     end
 
     it 'should not set an error on attribute' do
       @subnet.valid?
-      @subnet.errors[:value].should be_blank
+      expect(@subnet.errors[:value]).to be_blank
     end
   end
 
   it 'should be valid with a nil value' do
     @subnet = Subnet.new(:value => nil)
-    @subnet.valid?.should be_true
+    expect(@subnet.valid?).to be_truthy
   end
 end

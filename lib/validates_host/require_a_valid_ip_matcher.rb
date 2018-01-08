@@ -8,10 +8,6 @@ module Shoulda
       end
 
       class RequireAValidIpMatcher < ValidationMatcher
-        def initialize(attribute)
-          @attribute = attribute
-        end
-
         def description
           "require #{@attribute} to be a valid ip"
         end

@@ -7,12 +7,12 @@ describe DomainNameValidator do
     end
 
     it 'should set object as invalid' do
-      @server.valid?.should be_false
+      expect(@server.valid?).to be_falsey
     end
 
     it 'should set an error' do
       @server.valid?
-      @server.errors[:domain_name].should == ['is invalid']
+      expect(@server.errors[:domain_name]).to eq(['is invalid'])
     end
   end
 
@@ -22,17 +22,17 @@ describe DomainNameValidator do
     end
 
     it 'should set object as valid' do
-      @server.valid?.should be_true
+      expect(@server.valid?).to be_truthy
     end
 
     it 'should not set an error on attribute' do
       @server.valid?
-      @server.errors[:domain_name].should be_blank
+      expect(@server.errors[:domain_name]).to be_blank
     end
   end
 
   it 'should be valid with a nil value' do
     @server = Server.new(:domain_name => nil)
-    @server.valid?.should be_true
+    expect(@server.valid?).to be_truthy
   end
 end

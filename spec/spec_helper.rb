@@ -8,3 +8,5 @@ Coveralls.wear!
 require 'validates_host'
 require 'fake_app/server'
 require 'fake_app/subnet'
+
+include Shoulda::Matchers::ActiveModel
