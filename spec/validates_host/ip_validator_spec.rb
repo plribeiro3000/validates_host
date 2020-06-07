@@ -20,9 +20,24 @@ describe IpValidator do
     end
   end
 
-  context 'when ip is valid' do
+  context 'when ip is IPV4 valid' do
     before do
       server.ip = '10.10.10.1'
+      server.valid?
+    end
+
+    it 'sets object as valid' do
+      expect(server).to be_valid
+    end
+
+    it 'does not set an error on attribute' do
+      expect(server.errors[:ip]).to be_blank
+    end
+  end
+
+  context 'when ip is IPV6 valid' do
+    before do
+      server.ip = 'fd92:fe56:b43a:062e:ffff:ffff:ffff:ffff'
       server.valid?
     end
 
