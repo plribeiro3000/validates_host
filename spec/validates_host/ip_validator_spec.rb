@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe IpValidator do
   context 'when ip is invalid' do
     before :each do
-      @server = Server.new(:ip => '127.0.0')
+      @server = Server.new(ip: '127.0.0')
     end
 
     it 'should set object as invalid' do
@@ -18,7 +20,7 @@ describe IpValidator do
 
   context 'when ip is valid' do
     before :each do
-      @server = Server.new(:ip => '10.10.10.1')
+      @server = Server.new(ip: '10.10.10.1')
     end
 
     it 'should set object as valid' do
@@ -32,7 +34,7 @@ describe IpValidator do
   end
 
   it 'should be valid with a nil value' do
-    @server = Server.new(:ip => nil)
+    @server = Server.new(ip: nil)
     expect(@server.valid?).to be_truthy
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/core_ext/array/wrap'
 require 'validates_host/host_name_validator'
 require 'validates_host/domain_name_validator'

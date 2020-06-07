@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe SubnetValidator do
   context 'when subnet is invalid' do
     before :each do
-      @subnet = Subnet.new(:value => '127.0.0')
+      @subnet = Subnet.new(value: '127.0.0')
     end
 
     it 'should set object as invalid' do
@@ -18,7 +20,7 @@ describe SubnetValidator do
 
   context 'when subnet is valid' do
     before :each do
-      @subnet = Subnet.new(:value => '10.10.10.1/28')
+      @subnet = Subnet.new(value: '10.10.10.1/28')
     end
 
     it 'should set object as valid' do
@@ -32,7 +34,7 @@ describe SubnetValidator do
   end
 
   it 'should be valid with a nil value' do
-    @subnet = Subnet.new(:value => nil)
+    @subnet = Subnet.new(value: nil)
     expect(@subnet.valid?).to be_truthy
   end
 end

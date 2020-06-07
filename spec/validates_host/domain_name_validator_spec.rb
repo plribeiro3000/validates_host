@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe DomainNameValidator do
   context 'when domain_name is invalid' do
     before :each do
-      @server = Server.new(:domain_name => 'http://')
+      @server = Server.new(domain_name: 'http://')
     end
 
     it 'should set object as invalid' do
@@ -18,7 +20,7 @@ describe DomainNameValidator do
 
   context 'when domain_name is valid' do
     before :each do
-      @server = Server.new(:domain_name => 'example.com')
+      @server = Server.new(domain_name: 'example.com')
     end
 
     it 'should set object as valid' do
@@ -32,7 +34,7 @@ describe DomainNameValidator do
   end
 
   it 'should be valid with a nil value' do
-    @server = Server.new(:domain_name => nil)
+    @server = Server.new(domain_name: nil)
     expect(@server.valid?).to be_truthy
   end
 end

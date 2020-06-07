@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Subnet
   include ActiveModel::Validations
   include ActiveModel::Conversion
@@ -5,7 +7,7 @@ class Subnet
 
   attr_accessor :id, :value
 
-  validates :value, :subnet => true
+  validates :value, subnet: true
 
   def initialize(attributes = {})
     attributes.each do |name, value|

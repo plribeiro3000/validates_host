@@ -1,4 +1,6 @@
-require "shoulda-matchers"
+# frozen_string_literal: true
+
+require 'shoulda-matchers'
 
 module Shoulda
   module Matchers
@@ -15,17 +17,17 @@ module Shoulda
         def matches?(subject)
           super(subject)
 
-          disallows_invalid_value and allows_valid_value
+          disallows_invalid_value && allows_valid_value
         end
 
         private
 
         def disallows_invalid_value
-          disallows_value_of("example")
+          disallows_value_of('example')
         end
 
         def allows_valid_value
-          allows_value_of("example.com")
+          allows_value_of('example.com')
         end
       end
     end

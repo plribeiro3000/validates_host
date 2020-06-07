@@ -1,28 +1,31 @@
-rvm:
-  - 2.0
-  - 2.1
-  - 2.2
-  - 2.3
-  - 2.4
-  - 2.5
-  - 2.6
-gemfile:
-  - gemfiles/Gemfile.rails3
-  - gemfiles/Gemfile.rails4
-  - gemfiles/Gemfile.rails5
 matrix:
-  exclude:
-    - rvm: 2.2
-      gemfile: gemfiles/Gemfile.rails3
-    - rvm: 2.3
-      gemfile: gemfiles/Gemfile.rails3
-    - rvm: 2.4
-      gemfile: gemfiles/Gemfile.rails3
-    - rvm: 2.5
-      gemfile: gemfiles/Gemfile.rails3
-    - rvm: 2.6
+  include:
+    - rvm: 2.0
       gemfile: gemfiles/Gemfile.rails3
     - rvm: 2.0
-      gemfile: gemfiles/Gemfile.rails5
+      gemfile: gemfiles/Gemfile.rails4
     - rvm: 2.1
+      gemfile: gemfiles/Gemfile.rails3
+    - rvm: 2.1
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.2
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.2
       gemfile: gemfiles/Gemfile.rails5
+    - rvm: 2.3
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.3
+      gemfile: gemfiles/Gemfile.rails5
+    - rvm: 2.4
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.4
+      gemfile: gemfiles/Gemfile.rails5
+    - rvm: 2.5
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.5
+      gemfile: gemfiles/Gemfile.rails5
+    - rvm: 2.6
+      gemfile: gemfiles/Gemfile.rails4
+    - rvm: 2.6
+      gemfile: gemfiles/Gemfile.rails5
+      script: rake complete
