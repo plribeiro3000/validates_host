@@ -3,38 +3,39 @@
 require 'spec_helper'
 
 describe SubnetValidator do
+  let(:subnet) { Subnet.new }
+
   context 'when subnet is invalid' do
-    before :each do
-      @subnet = Subnet.new(value: '127.0.0')
+    before do
+      subnet.value = '127.0.0'
+      subnet.valid?
     end
 
-    it 'should set object as invalid' do
-      expect(@subnet.valid?).to be_falsey
+    it 'sets object as invalid' do
+      expect(subnet).not_to be_valid
     end
 
-    it 'should set an error' do
-      @subnet.valid?
-      expect(@subnet.errors[:value]).to eq(['is invalid'])
+    it 'sets an error' do
+      expect(subnet.errors[:value]).to eq(['is invalid'])
     end
   end
 
   context 'when subnet is valid' do
-    before :each do
-      @subnet = Subnet.new(value: '10.10.10.1/28')
+    before do
+      subnet.value = '10.10.10.1/28'
+      subnet.valid?
     end
 
-    it 'should set object as valid' do
-      expect(@subnet.valid?).to be_truthy
+    it 'sets object as valid' do
+      expect(subnet).to be_valid
     end
 
-    it 'should not set an error on attribute' do
-      @subnet.valid?
-      expect(@subnet.errors[:value]).to be_blank
+    it 'does not set an error on attribute' do
+      expect(subnet.errors[:value]).to be_blank
     end
   end
 
-  it 'should be valid with a nil value' do
-    @subnet = Subnet.new(value: nil)
-    expect(@subnet.valid?).to be_truthy
+  it 'is valid with a nil value' do
+    expect(subnet).to be_valid
   end
 end
